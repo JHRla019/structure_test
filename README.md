@@ -1,6 +1,9 @@
 # structure_test
 
-## 형상관리 사용법
+<br/> 
+
+## Git 시작
+
 1. jdk1.8.0 설치
 2. jdk1.8.0의 JVM을 실행시키기위해 eclipst.ini 파일에서 -vm 설정  
 (-vmargs 이후 라인은 JVM으로 넘겨지기 때문에 -vm 라인은 -vmargs 위에서 설정해야함)
@@ -31,3 +34,8 @@ openFile
 3. eclipse 실행 후 Window > Show View > Other > Git > Git Repositories와 Git Staging 선택
 4. Git Repositories 창에서 `Clone a Git repository` 클릭
 5. URL `https://github.com/JHRla019/structure_test.git`와 본인 계정 정보 입력 후 `Next`, `Finish`
+  
+<br/>  
+
+## 브랜치 생성 및 관리   
+:point_right: https://devhj.tistory.com/10
