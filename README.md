@@ -2,18 +2,19 @@
 
 ## 형상관리 사용법
 1. jdk1.8.0 설치
-2. eclipst.ini 파일 수정
+2. jdk1.8.0의 JVM을 실행시키기위해 eclipst.ini 파일에서 -vm 설정  
+(-vmargs 이후 라인은 JVM으로 넘겨지기 때문에 -vm 라인은 -vmargs 위에서 설정해야함)
 ```
 -startup
 plugins/org.eclipse.equinox.launcher_1.3.0.v20130327-1440.jar
--vm
-/usr/local/java/jdk1.8.0_241/bin
 --launcher.library
 plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.200.v20140116-2212
 -product
 org.eclipse.epp.package.jee.product
 --launcher.defaultAction
 openFile
+-vm
+/usr/local/java/jdk1.8.0_241/bin
 -showsplash
 org.eclipse.platform
 --launcher.XXMaxPermSize
