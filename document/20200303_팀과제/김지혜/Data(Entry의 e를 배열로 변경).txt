@@ -1,0 +1,40 @@
+package example;
+
+public class Data {
+
+	private int length;
+	private int [] element;
+
+	Data(int length) {
+		this.length = length;
+		this.element = new int[length];
+		for(int i=0; i < length; ++i){
+			element[i] = i;
+		}
+	}
+
+	Data() {
+		this(100000);
+	}
+
+	public int getLength() {
+
+		return length;
+	}
+
+	public void setLength(int length) {
+
+		this.length = length;
+	}
+
+	public int[] getElement() {
+
+		return element;
+	}
+
+	public void setElement(int[] element) {
+
+		this.element = element;
+	} 
+}
+
