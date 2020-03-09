@@ -40,5 +40,10 @@ openFile
 ## 브랜치 생성 및 관리   
 :point_right: https://devhj.tistory.com/10
 
+
 ## 자바 JDK 설정 방법
 https://dololak.tistory.com/64
+
+
+## Git 제외파일 설정
+https://defacto-standard.tistory.com/252
