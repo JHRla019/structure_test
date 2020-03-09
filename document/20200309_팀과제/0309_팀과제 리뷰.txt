@@ -1,0 +1,62 @@
+고도화라는 것은 틀은 정해져 있는 것이라 메인에서 변경되는 것이 없어야함
+Remote_Control.java에도 case가 늘어나면 안됨
+즉, 사용자가 추가 하는 것이 아닌 자동으로 추가할 수 있도록 구현해야함
+
+1. com......Test 패키지
+	Test 인터페이스
+		getCaseNumber(0;
+		getDesc();
+		get.
+		> 인터페이스 대상이 되어야할 메소드 목록
+
+	ListTest.java
+	ListTest2.java
+
+	메인에서 Test 패키지에 있는 모든 클래스를 다 읽어 오는 것
+
+Object c = ...;
+if( c instanceof Test)
+{
+	List<Test> 
+	Test[] tests = new Test[999];
+
+tests[getNumber()] = test;
+
+	// 
+}
+
+테스트 개수가 증가함에 따라 분류해야함
+ex) 30개라 치면
+	a
+		1, 2, 3, 4, 5, 10
+	b
+	c
+
+
+
+
+2. 설정 파일
+	테스트 대상 관리
+<test>
+	<target>...</target>
+	<target>...</target>
+	<target>...</target>
+	<target>...</target>
+...
+</test>
+
+실행할 때 마다 설정 파일을 관리해야 한다는 단점이 존재
+
+
+
+
+
+3. 어노테이션
+장점 : 구분을 하기 쉬움, 인터페이스에 있는 함수로 정해진 대로가 아닌 자유롭게 가능
+	1. jnuit : 자바의 테스트 도구
+
+		함수 위에 @클래스명 (어노테이션)을 붙임
+		jnuit을 활용해서 어노테이션이 붙은 모든 클래스를 실행시키는 방법
+		
+	2. 자체 어노테이션
+
