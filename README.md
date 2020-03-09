@@ -46,4 +46,4 @@ https://dololak.tistory.com/64
 
 
 ## Git 제외파일 설정
-https://lts0606.tistory.com/90
+https://rwd337.tistory.com/179
