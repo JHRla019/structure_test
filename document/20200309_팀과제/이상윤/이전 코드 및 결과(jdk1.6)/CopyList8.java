@@ -1,8 +1,16 @@
-package assignment;
+package team.dataStructure;
 
-import java.util.*;
+import java.util.AbstractSequentialList;
+import java.util.Collection;
+import java.util.ConcurrentModificationException;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+import java.util.Queue;
 
-public class CopyList8<E> extends AbstractSequentialList<E>
+public class SinglyCircularLinkedList<E> extends AbstractSequentialList<E>
 		implements List<E>, Deque<E>, Cloneable, java.io.Serializable {
 
 	// 첫번째 노드를 가리키는 필드
@@ -15,7 +23,7 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 		// 다음 노드를 가리키는 필드
 		public Node<E> next;
 		public Node<E> prev;
-		
+
 		public Node(E input) {
 			this.data = input;
 			this.next = null;
@@ -181,7 +189,7 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 	/**
 	 * Constructs an empty list.
 	 */
-	public CopyList8() {
+	public SinglyCircularLinkedList() {
 		header.next = header.previous = header;
 	}
 
@@ -194,7 +202,7 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 	 * @throws NullPointerException
 	 *             if the specified collection is null
 	 */
-	public CopyList8(Collection<? extends E> c) {
+	public SinglyCircularLinkedList(Collection<? extends E> c) {
 		this();
 		addAll(c);
 	}
@@ -306,7 +314,21 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 	 * @return <tt>true</tt> (as specified by {@link Collection#add})
 	 */
 	public boolean add(E e) {
-		addBefore(e, header);
+		// addBefore(e, header);
+		// 노드를 생성합니다.
+		Node<E> newNode = new Node<E>(e);
+		// 새로운 노드의 next 값은 헤드가 지정한 값을 저장하여 다음 노드 값을 가리킨다.
+		newNode.next = head;
+		// 헤드에 새로운 노드값을 저장하여 새로운 노드를 가리킨다.
+		head = newNode;
+		size++;
+		// tail의 값을 지정하는 구문; 첫 노드 생성 시 head.next값이 없기 때문에 null 판단으로 head의 값을
+		// tail에도 준다.
+		// toString()으로 값 비교시 head와 tail의 값은 같게 나온다.
+		if (head.next == null) {
+			tail = head;
+		}
+		tail.next = head;
 		return true;
 	}
 
@@ -872,7 +894,7 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 			checkForComodification();
 			Entry<E> lastNext = lastReturned.next;
 			try {
-				CopyList8.this.remove(lastReturned);
+				SinglyCircularLinkedList.this.remove(lastReturned);
 			} catch (NoSuchElementException e) {
 				throw new IllegalStateException();
 			}
@@ -971,9 +993,9 @@ public class CopyList8<E> extends AbstractSequentialList<E>
 	 * @return a shallow copy of this <tt>LinkedList</tt> instance
 	 */
 	public Object clone() {
-		CopyList8<E> clone = null;
+		SinglyCircularLinkedList<E> clone = null;
 		try {
-			clone = (CopyList8<E>) super.clone();
+			clone = (SinglyCircularLinkedList<E>) super.clone();
 		} catch (CloneNotSupportedException e) {
 			throw new InternalError();
 		}
